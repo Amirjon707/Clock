@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    background: #444;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+#time {
+    display: flex;
+    text-align: center;
+    gap: 10px;
+    font-size: 23px;
+    font-weight: bolder;
+    color: #fff;
+}
+
+#time div p {
+    text-align: left;
+    font-size: 0.5em;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    line-height: 10px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    transform: translateX(-50%), translateY(-5px);
+}
+
+h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+.circle {
+    position: relative;
+}
+
+svg {
+    width: 150px;
+    transform: rotate(270deg);
+
+    & circle {
+        fill: transparent;
+        stroke: #333;
+        stroke-width: 4;
+        transform: translate(5px, 5px);
+        stroke-dasharray: 440;
+
+        &:nth-child(2) {
+            stroke: var(--clr);
+        }
+    }
+}
+
+#ampm {
+    font-size: 25px;
+}
+
+.dots {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+}
+
+.dots::before {
+    content: "";
+    position: absolute;
+    top: -.75px;
+    width: 15px;
+    height: 15px;
+    background-color: var(--clr);
+    border-radius: 50%;
+    box-shadow: 0 0 20px var(--clr),
+                0 0 60px var(--clr);
+}
